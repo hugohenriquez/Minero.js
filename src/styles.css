@@ -4,3 +4,8 @@ html, body { height: 100%; }
 body { margin: 0;
   font-family: Roboto, "Helvetica Neue",
   sans-serif; }
+
+
+  .centrado{
+    flex: 1 0.5 auto;
+  }

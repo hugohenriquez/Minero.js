@@ -1,27 +1,30 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+
+
+
+<mat-sidenav-container class="sidenav-container ">
+  <mat-sidenav #drawer class="sidenav "  fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
         <app-treeview></app-treeview>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
+  <mat-sidenav-content >
+    <mat-toolbar color="secundary" class="justify-content-center">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>minero-app</span>
+      <span></span>
       <span class="spacer"></span>
-        <a mat-list-item href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
 
-
+        <button type="button" class="btn btn-primary py-2 mr-3 ">Cliente</button>
+        <button type="button" class="btn btn-primary py-2 mr-3 ">Contratos</button>
+        <button type="button" class="btn btn-primary py-2 mr-3 ">Lotes</button>
+        <button type="button" class="btn btn-primary py-2 mr-3 ">Facturacion</button>
+        <button type="button" class="btn btn-primary py-2 mr-3 ">Traficos</button>
     </mat-toolbar>
-    <ng-content></ng-content>
+    <app-cliente-tab></app-cliente-tab>
 
     <!-- Add Content Here -->
   </mat-sidenav-content>
