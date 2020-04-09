@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule, } from '@Angular/fire/firestore';
+import { AngularFireAuthModule, AngularFireAuth   } from '@angular/fire/auth';
+import { FlashMessagesModule} from 'angular2-flash-messages';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -22,6 +29,17 @@ import { ClienteTabComponent } from './cliente/cliente-tab/cliente-tab.component
 import { AppRoutingModule } from './app-routing.module';
 import { ContratoTabComponent } from './contrato/contrato-tab/contrato-tab.component';
 import { FormComponent } from './cliente/cliente-form/cliente-form.component';
+import { ContratoFormComponent } from './contrato/contrato-form/contrato-form.component';
+import { LotesFormComponent } from './lote/lotes-form/lotes-form.component';
+import { LotesTabComponent } from './lote/lotes-tab/lotes-tab.component';
+import { FacturacionTabComponent } from './facturacion/facturacion-tab/facturacion-tab.component';
+import { FacturacionFormComponent } from './facturacion/facturacion-form/facturacion-form.component';
+import { TraficosFormComponent } from './traficos/traficos-form/traficos-form.component';
+import { TraficosTabComponent } from './traficos/traficos-tab/traficos-tab.component';
+import { ClienteDireccionComponent } from './cliente/cliente-direccion/cliente-direccion.component';
+import { ClienteContratoComponent } from './cliente/cliente-contrato/cliente-contrato.component';
+
+
 
 
 
@@ -36,6 +54,16 @@ import { FormComponent } from './cliente/cliente-form/cliente-form.component';
     ContratoTabComponent,
     ClienteTabComponent,
     FormComponent,
+    ContratoFormComponent,
+    LotesFormComponent,
+    LotesTabComponent,
+    FacturacionTabComponent,
+    FacturacionFormComponent,
+    TraficosFormComponent,
+    TraficosTabComponent,
+    ClienteDireccionComponent,
+    ClienteContratoComponent,
+
 
 
 
@@ -52,10 +80,12 @@ import { FormComponent } from './cliente/cliente-form/cliente-form.component';
     MatListModule,
     MatMenuModule,
     AppRoutingModule,
-
-
-
-
+    AngularFireModule.initializeApp(environment.firestore, 'admin-minero'),
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule,
+    FlashMessagesModule.forRoot()
 
 
   ],
