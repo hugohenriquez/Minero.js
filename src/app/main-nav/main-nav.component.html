@@ -4,7 +4,7 @@
 <mat-sidenav-container class="sidenav-container ">
   <mat-sidenav #drawer class="sidenav "  fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar></mat-toolbar>
     <mat-nav-list>
         <app-treeview></app-treeview>
     </mat-nav-list>
@@ -18,14 +18,9 @@
       <span></span>
       <span class="spacer"></span>
 
-        <button type="button"  class="btn btn-primary py-2 mr-3 ">Cliente</button>
-        <button type="button" class="btn btn-primary py-2 mr-3 ">Contratos</button>
-        <button type="button" class="btn btn-primary py-2 mr-3 ">Lotes</button>
-        <button type="button" class="btn btn-primary py-2 mr-3 ">Facturacion</button>
-        <button type="button" class="btn btn-primary py-2 mr-3 ">Traficos</button>
     </mat-toolbar>
-    <app-cliente-tab></app-cliente-tab>
 
+    <app-cliente-tab></app-cliente-tab>
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

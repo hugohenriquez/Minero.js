@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
-import { ClienteService } from '../shared/service/cliente.service';
+import { ClienteService } from '../shared/servicio/cliente.service';
+
 
 /**
  * Food data with nested structure.
@@ -15,23 +16,23 @@ interface FoodNode {
 
 const TREE_DATA: FoodNode[] = [
   {
-    name: 'Fruit',
+    name: '2020',
     children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
+      {name: 'minero-01'},
+      {name: 'minero-02'},
+      {name: 'minero-03'},
     ]
   }, {
-    name: 'Vegetables',
+    name: '2019',
     children: [
       {
-        name: 'Green',
+        name: 'chuquicamata',
         children: [
-          {name: 'Broccoli'},
-          {name: 'Brussels sprouts'},
+          {name: 'minero-01'},
+          {name: 'minero-01'},
         ]
       }, {
-        name: 'Orange',
+        name: 'pelambre',
         children: [
           {name: 'Pumpkins'},
           {name: 'Carrots'},
@@ -39,6 +40,30 @@ const TREE_DATA: FoodNode[] = [
       },
     ]
   },
+  {
+    name: '2022',
+    children: [
+      {name: 'minero-01'},
+      {name: 'minero-02'},
+      {name: 'minero-03'},
+    ]
+  },
+  {
+    name: '2023',
+    children: [
+      {name: 'minero-01'},
+      {name: 'minero-02'},
+      {name: 'minero-03'},
+    ]
+  },
+  {
+    name: '2024',
+    children: [
+      {name: 'minero-01'},
+      {name: 'minero-02'},
+      {name: 'minero-03'},
+    ]
+  }
 ];
 
 
@@ -54,7 +79,7 @@ export class TreeviewComponent  {
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FoodNode>();
 
-  constructor() {
+  constructor(  ) {
     this.dataSource.data = TREE_DATA;
   }
 

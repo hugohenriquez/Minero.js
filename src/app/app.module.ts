@@ -38,10 +38,12 @@ import { TraficosFormComponent } from './traficos/traficos-form/traficos-form.co
 import { TraficosTabComponent } from './traficos/traficos-tab/traficos-tab.component';
 import { ClienteDireccionComponent } from './cliente/cliente-direccion/cliente-direccion.component';
 import { ClienteContratoComponent } from './cliente/cliente-contrato/cliente-contrato.component';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 
-
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {   MatSelectModule }  from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -85,7 +87,12 @@ import { ClienteContratoComponent } from './cliente/cliente-contrato/cliente-con
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatTabsModule
+
 
 
   ],
