@@ -6,9 +6,7 @@ import { AngularFirestoreModule, } from '@Angular/fire/firestore';
 import { AngularFireAuthModule, AngularFireAuth   } from '@angular/fire/auth';
 import { FlashMessagesModule} from 'angular2-flash-messages';
 import { FormsModule } from '@angular/forms';
-
-
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 // componentes
 import { AppComponent } from './app.component';
@@ -39,17 +37,33 @@ import { TraficosTabComponent } from './traficos/traficos-tab/traficos-tab.compo
 import { ClienteDireccionComponent } from './cliente/cliente-direccion/cliente-direccion.component';
 import { ClienteContratoComponent } from './cliente/cliente-contrato/cliente-contrato.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
-
-
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {   MatSelectModule }  from '@angular/material/select';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule} from '@angular/material/tabs';
+import { BookListRoutingModule } from './books/book-list/book-list-routing.module';
+import { BookListComponent } from './books/book-list/book-list.component';
+import { CommonModule } from '@angular/common';
+import { AngularFireStorageModule} from '@angular/fire/storage';
+import { ClienteModule } from './cliente/cliente.module';
+import { ClienteRoutingModule } from './cliente/cliente-routing.module';
+import { CommercialContactComponent } from './cliente/commercial-contact/commercial-contact.component';
+import { CommercialHistoryComponent } from './cliente/commercial-history/commercial-history.component';
+import { ContactsComponent } from './cliente/contacts/contacts.component';
+import { BankAccountsComponent } from './cliente/bank-accounts/bank-accounts.component';
+import { ProductsComponent } from './cliente/products/products.component';
+import { CompanyStructureComponent } from './cliente/company-structure/company-structure.component';
+import { ConfigurationComponent } from './cliente/configuration/configuration.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { ClienteTreeviewComponent } from './cliente/cliente-treeview/cliente-treeview.component';
+import { ClienteService } from './shared/servicio/cliente.service';
+import { FirestoreService } from './core/services/firestore.service';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent,
     TreeviewComponent,
     MenuComponent,
     HeaderComponent,
@@ -65,6 +79,24 @@ import {MatTabsModule} from '@angular/material/tabs';
     TraficosTabComponent,
     ClienteDireccionComponent,
     ClienteContratoComponent,
+    BookListComponent,
+    CommercialContactComponent,
+    CommercialHistoryComponent,
+    ContactsComponent,
+    BankAccountsComponent,
+    ProductsComponent,
+    CompanyStructureComponent,
+    ConfigurationComponent,
+    MainNavComponent,
+    ClienteTreeviewComponent
+
+
+
+
+
+
+
+
 
 
 
@@ -81,6 +113,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTreeModule,
     MatListModule,
     MatMenuModule,
+    BookListRoutingModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firestore, 'admin-minero'),
     AngularFireModule,
@@ -91,12 +124,19 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatFormFieldModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatTabsModule
+    MatTabsModule,
+    CommonModule,
+    AngularFireStorageModule,
+    MatProgressBarModule,
+    ClienteRoutingModule,
+    ClienteModule,
+    TranslateModule.forRoot(),
+
 
 
 
   ],
-  providers: [],
+  providers: [ ClienteService , FirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
   firestore: {
-    apiKey: "AIzaSyAWhm940ogd8DHzyCVJbtpn1R8EBWyueD4",
-    authDomain: "admin-minero.firebaseapp.com",
-    databaseURL: "https://admin-minero.firebaseio.com",
-    projectId: "admin-minero",
-    storageBucket: "admin-minero.appspot.com",
-    messagingSenderId: "16436182872",
-    appId: "1:16436182872:web:74ffb9294fbbc713406f2d",
-    measurementId: "G-74JT3NLQC4"
+    apiKey: "AIzaSyBb7v_d-ha-F_hE5Ldt04DNfFWrPQqfTUM",
+    authDomain: "admin-minero-5a2e3.firebaseapp.com",
+    databaseURL: "https://admin-minero-5a2e3.firebaseio.com",
+    projectId: "admin-minero-5a2e3",
+    storageBucket: "admin-minero-5a2e3.appspot.com",
+    messagingSenderId: "351146766177",
+    appId: "1:351146766177:web:14ee585f6f1c68a3115f20",
+    measurementId: "G-DEHPD3XQP1"
   }
 };

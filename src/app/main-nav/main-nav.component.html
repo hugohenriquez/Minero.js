@@ -1,26 +1,21 @@
-
-
-
 <mat-sidenav-container class="sidenav-container ">
-  <mat-sidenav #drawer class="sidenav "  fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar></mat-toolbar>
-    <mat-nav-list>
-        <app-treeview></app-treeview>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content >
-    <mat-toolbar color="secundary" class="justify-content-center">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+    <mat-sidenav #drawer class="sidenav " fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <!-- <mat-toolbar></mat-toolbar> -->
+        <!-- <mat-nav-list> -->
+        <app-cliente-treeview></app-cliente-treeview>
+        <!-- </mat-nav-list> -->
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="secundary" class="justify-content-center">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span></span>
-      <span class="spacer"></span>
+            <span></span>
+            <span class="spacer"></span>
 
-    </mat-toolbar>
+        </mat-toolbar>
 
-    <app-cliente-tab></app-cliente-tab>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
+        <app-cliente-tab></app-cliente-tab>
+        <!-- Add Content Here -->
+    </mat-sidenav-content>
 </mat-sidenav-container>

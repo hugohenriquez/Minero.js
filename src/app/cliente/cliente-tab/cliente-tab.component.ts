@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input , Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cliente-tab',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteTabComponent implements OnInit {
 
-  constructor() { }
+    mostrar = false;
+    @Output() customer;
+  
+    constructor( ) {
+    
+
+    }
+
 
   ngOnInit(): void {
   }
+  
+  mostarMenu(indes: number) {
+    
+  }
+   
+
+
 
 }
