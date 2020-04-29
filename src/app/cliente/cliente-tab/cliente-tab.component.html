@@ -1,22 +1,75 @@
- <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cliente</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Contacto</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Direccion</a>
-  </div>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button (click)="mostrar = true" class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" role="tab" aria-controls="nav-home" aria-selected="true">Cliente {{mostrar}}</button>
+        <button class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Contacto Fiscal</button>
+        <button class="nav-item nav-link" id="nav-commercial-contact-tab" data-toggle="tab" href="#nav-commercial-contact" role="tab" aria-controls="nav-commercial-contact" aria-selected="false">Contacto Comercial </button>
+        <button class="nav-item nav-link" id="nav-commercial-history-tab" data-toggle="tab" href="#nav-commercial-history" role="tab" aria-controls="nav-contact" aria-selected="false">Historia Comercial </button>
+        <button class="nav-item nav-link" id="nav-contacts-tab" data-toggle="tab" href="#nav-contacts" role="tab" aria-controls="nav-contact" aria-selected="false">Contactos </button>
+        <button class="nav-item nav-link" id="nav-bank-accounts-tab" data-toggle="tab" href="#nav-bank-accounts" role="tab" aria-controls="nav-contact" aria-selected="false">Cuenta Bancaria</button>
+        <button class="nav-item nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products" role="tab" aria-controls="nav-contact" aria-selected="false">Productos </button>
+        <button class="nav-item nav-link" id="nav-company-structure-tab" data-toggle="tab" href="#nav-company-structure" role="tab" aria-controls="nav-contact" aria-selected="false">Estructura Compañia</button>
+        <button class="nav-item nav-link" id="nav-configuration-tab" data-toggle="tab" href="#nav-configuration" role="tab" aria-controls="nav-contact" aria-selected="false">Configuracion </button>
+
+    </div>
 </nav>
+
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <app-form *ngIf="mostrar"></app-form>
+    </div>
 
-<app-form></app-form>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <app-cliente-contrato *ngIf="mostrar"></app-cliente-contrato>
 
-  </div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-  <app-cliente-contrato></app-cliente-contrato>
+    </div>
 
-  </div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-   <app-cliente-direccion></app-cliente-direccion>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <app-cliente-direccion></app-cliente-direccion>
 
-  </div>
+    </div>
+
+    <div class="tab-pane fade" id="nav-commercial-contact" role="tabpanel" aria-labelledby="nav-commercial-contact-tab">
+        <app-commercial-contact></app-commercial-contact>
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-commercial-history" role="tabpanel" aria-labelledby="nav-commercial-history-tab">
+        <app-commercial-history></app-commercial-history>
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-contacts" role="tabpanel" aria-labelledby="nav-contacts-tab">
+        <app-contacts></app-contacts>
+
+    </div>
+    <div class="tab-pane fade" id="nav-bank-accounts" role="tabpanel" aria-labelledby="nav-bank-accounts-tab">
+        <app-bank-accounts></app-bank-accounts>
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
+        <app-products></app-products>
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
+        <app-products></app-products>
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-company-structure" role="tabpanel" aria-labelledby="nav-company-structure-tab">
+        <app-company-structure></app-company-structure>
+
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-configuration" role="tabpanel" aria-labelledby="nav-configuration-tab">
+        <app-configuration></app-configuration>
+
+    </div>
+
+
+
+
+
 </div>
